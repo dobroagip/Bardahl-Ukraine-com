@@ -1,0 +1,31 @@
+{
+  "name": "bardahl_ukr",
+  "version": "1.0.0",
+  "description": "Bardahl Ukraine",
+  "main": "src/server.js",
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "db:studio": "npx prisma studio",
+    "db:migrate": "npx prisma migrate dev",
+    "db:generate": "npx prisma generate",
+    "db:seed": "npx prisma db seed",
+    "db:reset": "npx prisma migrate reset"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.8.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "node-cache": "^5.1.2",
+    "prisma": "^5.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
