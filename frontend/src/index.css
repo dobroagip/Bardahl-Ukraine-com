@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Orbitron:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Bardahl Custom Styles */
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-bardahl {
+    @apply bg-bardahl-gradient text-bardahl-black font-display font-semibold px-6 py-3 rounded-bardahl shadow-bardahl hover:shadow-bardahl-lg transition-all duration-300 hover:scale-105;
+  }
+  
+  .btn-bardahl-dark {
+    @apply bg-dark-gradient text-white font-display font-semibold px-6 py-3 rounded-bardahl shadow-carbon hover:shadow-bardahl transition-all duration-300 border border-bardahl-metal-gray;
+  }
+  
+  .card-bardahl {
+    @apply bg-white rounded-bardahl-lg shadow-lg border border-gray-100 overflow-hidden hover:shadow-bardahl transition-all duration-300;
+  }
+  
+  .card-bardahl-dark {
+    @apply bg-bardahl-carbon rounded-bardahl-lg shadow-carbon border border-bardahl-dark-gray overflow-hidden text-white;
+  }
+  
+  .badge-bardahl {
+    @apply bg-bardahl-yellow text-bardahl-black px-3 py-1 rounded-full text-sm font-semibold font-display;
+  }
+  
+  .nav-link-bardahl {
+    @apply text-bardahl-metal-gray hover:text-bardahl-yellow font-medium transition-colors duration-200 relative;
+  }
+  
+  .nav-link-bardahl::after {
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-bardahl-yellow transition-all duration-300;
+  }
+  
+  .nav-link-bardahl:hover::after {
+    @apply w-full;
+  }
+}
+
+@layer utilities {
+  .text-gradient-bardahl {
+    background: linear-gradient(135deg, #FFCC00 0%, #FFD700 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .animate-racing {
+    background: linear-gradient(90deg, transparent, rgba(255, 204, 0, 0.4), transparent);
+    background-size: 200% 100%;
+    animation: shine 3s infinite;
+  }
+}
