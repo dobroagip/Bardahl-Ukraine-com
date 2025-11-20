@@ -1,4 +1,5 @@
 import axios from 'axios';
+import logger from '../utils/logger';
 
 const API_BASE_URL = 'http://localhost:3000/api';
 
@@ -7,7 +8,17 @@ const api = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
+  timeout: 10000,
 });
+
+// Перехватчик ошибок
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    logger.error('API Error:', error.response?.data || error.message);
+    return Promise.reject(error);
+  }
+);
 
 // Product API
 export const productAPI = {
@@ -21,7 +32,7 @@ export const categoryAPI = {
   getAll: () => api.get('/categories'),
 };
 
-// Cart API
+// Cart API - ДОБАВЬТЕ ЭТО!
 export const cartAPI = {
   get: () => api.get('/cart'),
   add: (productId, quantity = 1) => api.post('/cart/add', { productId, quantity }),
