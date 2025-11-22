@@ -228,8 +228,7 @@ const cartController = {
         message: 'Помилка сервера'
       });
     }
-  }
-,
+  },
 
   // Обновить количество товара
   updateCartItem: async (req, res) => {
